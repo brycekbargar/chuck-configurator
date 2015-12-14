@@ -1,0 +1,22 @@
+{
+  "name": "chuck-configurator",
+  "version": "1.0.0",
+  "description": "A pseudo DI factory for the [ChucK language](http://chuck.cs.princeton.edu/).",
+  "main": "index.ck",
+  "files": [
+    "package"
+  ],
+  "scripts": {
+    "start": "steve start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brycekbargar/chuck-configurator.git"
+  },
+  "author": "Bryce",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brycekbargar/chuck-configurator/issues"
+  },
+  "homepage": "https://github.com/brycekbargar/chuck-configurator#readme"
+}
