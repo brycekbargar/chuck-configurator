@@ -83,3 +83,28 @@ ObjectFactory.UseDefault("Thing", "SuperCoolThing");
 
 ThingFactory.Instance().GetConfiguredThing() // returns JustAThing implementation
 ```
+
+##### The Configurator #####
+Basically just a wrapper for code I found myself commonly writing around configuration and DI. It has a single static method `Configure` which parses an options array and configures the `ObjectFactory`. For example:
+
+```
+[ "Thing", "JustAThing",
+  "AnotherKey", "AnotherValue" ] @=> string args[];
+Configurator.Configure(args);
+
+/*  ObjectFactory will have received the following calls
+*   ObjectFactory.Use("Thing", "JustAThing");
+*   ObjectFactory.Use("AnotherKey", "AnotherValue");
+*/
+```
+
+This makes it easy to configure ChucK from the command line. For example:
+```
+string args[0];
+for(int i; i < me.args(); i++)
+{
+  args << me.arg(i);
+}
+
+Configurator.Configure(args);
+```
